@@ -12,3 +12,7 @@ a{
     text-decoration: none;
     color: black
 }
+
+.content{
+    padding: 1rem;
+}
