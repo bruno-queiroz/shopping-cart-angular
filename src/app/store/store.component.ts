@@ -23,25 +23,25 @@ export class StoreComponent {
       id: 1,
       name: "Car",
       price: 1200,
-      img: ""
+      img: "./assets/banana.jpg"
     },
     {
       id: 2,
       name: "Book",
       price: 1200,
-      img: ""
+      img: "./assets/book.jpg"
     },
     {
       id: 3,
       name: "Computer",
       price: 1200,
-      img: ""
+      img: "./assets/car.jpg"
     },
     {
       id: 4,
       name: "Banana",
       price: 1200,
-      img: ""
+      img: "./assets/computer.jpg"
     }
   ] 
 }
