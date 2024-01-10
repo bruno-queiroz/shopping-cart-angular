@@ -1,0 +1,20 @@
+<article>
+    <img [src]="item.img" [alt]="item.name + ' image'">
+    <div class="item-container">
+        <div class="item-info-container">
+            <h2>{{item.name}}</h2>
+            <span>${{item.price}}</span>
+        </div>
+        <button *ngIf="!isItemAdded; else elseBlock" class="add-to-cart-btn" (click)="addItemToCart()">Add to cart</button>
+        <ng-template #elseBlock>
+            <div class="cart-control-container">
+                <div class="cart-control-btn-container">
+                    <button (click)="decreaseAmount()">-</button>
+                    <span>{{amount}} in cart</span>
+                    <button (click)="increaseAmount()">+</button>
+                </div>
+                <button class="remove-item-btn" (click)="removeItem()">remove</button>
+            </div>
+        </ng-template>
+    </div>
+</article>
