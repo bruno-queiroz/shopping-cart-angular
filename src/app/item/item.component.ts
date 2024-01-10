@@ -18,4 +18,8 @@ export class ItemComponent {
     this.isItemAdded = true
     console.log('adding item')
   }
+
+  increaseAmount(){
+    this.amount++
+  }
 }
