@@ -16,10 +16,13 @@ export class ItemComponent {
 
   addItemToCart(){
     this.isItemAdded = true
-    console.log('adding item')
   }
 
   increaseAmount(){
     this.amount++
+  }
+
+  removeItem(){
+    this.isItemAdded = false
   }
 }
