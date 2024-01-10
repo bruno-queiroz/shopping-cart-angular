@@ -22,6 +22,14 @@ export class ItemComponent {
     this.amount++
   }
 
+  decreaseAmount(){
+    if(this.amount === 1){
+      this.removeItem()
+      return
+    }
+    this.amount--
+  }
+
   removeItem(){
     this.isItemAdded = false
   }
