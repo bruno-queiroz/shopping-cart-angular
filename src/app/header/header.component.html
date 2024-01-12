@@ -6,8 +6,9 @@
         <li><a href="/about">About</a></li>
       </ul>
 
-      <button class="cart-btn">
+      <button class="cart-btn" (click)="openCart()">
           <mat-icon>add_shopping_cart</mat-icon>
       </button>
     </div>
+    <app-cart [isCartOpen]="isCartOpen" (closeCartEvent)="closeCart()"/>
 </header>
