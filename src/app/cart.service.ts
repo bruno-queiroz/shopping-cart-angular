@@ -7,15 +7,7 @@ export type CartItem = StoreItem & { amount: number }
     providedIn: 'root'
 })
 export class CartService{
-    items: CartItem[] = [
-        {
-            id: 1,
-            name: "Car",
-            price: 1200,
-            img: "./assets/banana.jpg",
-            amount: 1
-        },
-    ];
+    items: CartItem[] = []
 
     addToCart(storeItem: StoreItem){
         const itemSelected = this.items.find(item => storeItem.id === item.id);
@@ -27,5 +19,9 @@ export class CartService{
 
        const newCartItem = { ...storeItem, amount: 1 }
        this.items.push(newCartItem)
+    }
+
+    getItemById(id: number){
+        return this.items.find(item => item.id === id)
     }
 }
