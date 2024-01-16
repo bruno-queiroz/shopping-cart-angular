@@ -7,7 +7,7 @@
         <h2>Cart</h2>
 
         <div class="cart-item-container">
-            <app-cart-item/>
+            <app-cart-item *ngFor="let cartItem of cartItems" [cartItem]="cartItem"/>
         </div>
     </div>
 </aside>
