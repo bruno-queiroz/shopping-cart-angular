@@ -16,4 +16,16 @@ export class CartService{
             amount: 1
         },
     ];
+
+    addToCart(storeItem: StoreItem){
+        const itemSelected = this.items.find(item => storeItem.id === item.id);
+    
+        if(itemSelected){
+          itemSelected.amount++
+          return
+        }
+
+       const newCartItem = { ...storeItem, amount: 1 }
+       this.items.push(newCartItem)
+    }
 }
