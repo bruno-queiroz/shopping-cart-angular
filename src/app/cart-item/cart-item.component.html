@@ -1,5 +1,5 @@
 <article>
-    <img [src]="cartItem.img" alt="">
+    <img [src]="cartItem.img" [alt]="cartItem.name + 'image'">
     <div class="cart-item-info-container">
         <span>{{cartItem.name}}</span>
         <span>$ {{cartItem.price}}</span>
