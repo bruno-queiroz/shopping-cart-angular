@@ -6,8 +6,11 @@
 
         <h2>Cart</h2>
 
-        <div class="cart-item-container">
+        <div *ngIf="cartItems.length > 0; else elseBlock" class="cart-item-container">
             <app-cart-item *ngFor="let cartItem of cartItems" [cartItem]="cartItem"/>
         </div>
+        <ng-template #elseBlock>
+            Empty Cart 😥
+        </ng-template>
     </div>
 </aside>
