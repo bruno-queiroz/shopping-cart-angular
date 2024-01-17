@@ -1,6 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
 import { StoreItem } from '../store/store.component';
 import { CommonModule } from '@angular/common';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-item',
@@ -10,27 +11,13 @@ import { CommonModule } from '@angular/common';
   styleUrl: './item.component.css'
 })
 export class ItemComponent {
-  @Input() item!: StoreItem;
-  isItemAdded = true;
-  amount = 1;
+  @Input() item!: StoreItem
+  isItemAdded = false
 
-  addItemToCart(){
+  cartService: CartService = inject(CartService)
+
+  addItemToCart(item: StoreItem){
+    this.cartService.addToCart(item)
     this.isItemAdded = true
-  }
-
-  increaseAmount(){
-    this.amount++
-  }
-
-  decreaseAmount(){
-    if(this.amount === 1){
-      this.removeItem()
-      return
-    }
-    this.amount--
-  }
-
-  removeItem(){
-    this.isItemAdded = false
   }
 }
