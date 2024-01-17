@@ -21,6 +21,24 @@ export class CartService{
        this.items.push(newCartItem)
     }
 
+    removeFromCart(itemToBeRemoved: CartItem | undefined, removeAll = false){
+        if(!itemToBeRemoved) return 
+
+        if(itemToBeRemoved.amount > 1 && !removeAll){
+            itemToBeRemoved.amount--
+            return
+        }
+        
+        let index = -1
+        this.items.forEach((item, i) => {
+            if(item.id === itemToBeRemoved.id){
+                index = i
+            }
+        })
+        this.items.splice(index, 1)
+        console.log(this.items)
+    }
+
     getItemById(id: number){
         return this.items.find(item => item.id === id)
     }
