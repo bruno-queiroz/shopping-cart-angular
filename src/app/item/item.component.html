@@ -5,15 +5,15 @@
             <h2>{{item.name}}</h2>
             <span>${{item.price}}</span>
         </div>
-        <button *ngIf="!isItemAdded; else elseBlock" class="add-to-cart-btn" (click)="addItemToCart()">Add to cart</button>
+        <button *ngIf="!isItemAdded; else elseBlock" class="add-to-cart-btn" (click)="addItemToCart(item)">Add to cart</button>
         <ng-template #elseBlock>
             <div class="cart-control-container">
                 <div class="cart-control-btn-container">
-                    <button (click)="decreaseAmount()">-</button>
-                    <span>{{amount}} in cart</span>
-                    <button (click)="increaseAmount()">+</button>
+                    <button (click)="removeItemFromCart(item.id)">-</button>
+                    <span>{{cartService.getItemById(item.id)?.amount || 0}} in cart</span>
+                    <button (click)="addItemToCart(item)">+</button>
                 </div>
-                <button class="remove-item-btn" (click)="removeItem()">remove</button>
+                <button class="remove-item-btn" (click)="removeItemFromCart(item.id, true)">remove</button>
             </div>
         </ng-template>
     </div>
