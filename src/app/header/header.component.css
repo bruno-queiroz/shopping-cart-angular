@@ -15,6 +15,7 @@ header{
 }
 
 .cart-btn{
+    position: relative;
     border-radius: 50%;
     padding: .35rem;
     background-color: white;
@@ -26,4 +27,17 @@ header{
 a{
     text-decoration: none;
     color: black
+}
+
+.cart-items-amount{
+    display: grid;
+    position: absolute;
+    right: -7px;
+    bottom: -7px;
+    place-content: center;
+    background-color: red;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    color: white;
 }
