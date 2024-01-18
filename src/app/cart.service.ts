@@ -47,4 +47,9 @@ export class CartService{
         const total = this.items.reduce((acc, item) => (item.price * item.amount) + acc, 0)
         return total
     }
+
+    calculateCartItemsAmount(){
+        const amount = this.items.reduce((acc, item) => item.amount + acc, 0)
+        return amount
+    }
 }
