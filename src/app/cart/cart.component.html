@@ -10,8 +10,8 @@
             <app-cart-item *ngFor="let cartItem of cartItems" [cartItem]="cartItem"/>
         </div>
         <ng-template #elseBlock>
-            Empty Cart 😥
+            <div class="empty-cart">Empty Cart 😥</div>
         </ng-template>
-        <div class="total">total: {{cartService.calculateTotalValue()}}</div>
+        <div *ngIf="cartItems.length > 0" class="total">total: {{cartService.calculateTotalValue()}}</div>
     </div>
 </aside>
