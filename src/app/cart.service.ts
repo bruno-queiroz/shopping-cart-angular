@@ -42,4 +42,9 @@ export class CartService{
     getItemById(id: number){
         return this.items.find(item => item.id === id)
     }
+
+    calculateTotalValue(){
+        const total = this.items.reduce((acc, item) => (item.price * item.amount) + acc, 0)
+        return total
+    }
 }
