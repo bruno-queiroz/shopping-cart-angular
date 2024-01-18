@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { CartComponent } from '../cart/cart.component';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-header',
@@ -10,7 +11,8 @@ import { CartComponent } from '../cart/cart.component';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
-  isCartOpen = false;
+  isCartOpen = false
+  cartService: CartService = inject(CartService)
 
   openCart(){
     this.isCartOpen = true;
