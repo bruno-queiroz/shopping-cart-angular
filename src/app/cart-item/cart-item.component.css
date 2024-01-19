@@ -1,29 +1,30 @@
 article{
     display: flex;
-    gap: .25rem
+    gap: .25rem;
+    position: relative;
 }
 
 img{
     aspect-ratio: 16/9;
-    background-color: red;
     width: 40%;
+    object-fit: cover;
 }
 
 button{
-    height: max-content;
-    width: max-content;
-    flex-shrink: 1;
-    flex-grow: 0;
-    margin-top: auto;
-    margin-bottom: auto;
+    position: absolute;
+    right: 0;
+    color: red;
     background-color: transparent;
-    border: 1px solid red;
-    border-radius: 5px;
-    
+    border: none; 
 }
 
 .cart-item-info-container{
     display: flex;
     flex-direction: column;
     flex: 1;
+}
+
+.cart-item-name{
+    font-size: 1rem;
+    font-weight: 600;
 }
