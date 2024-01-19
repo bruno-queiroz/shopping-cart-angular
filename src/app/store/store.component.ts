@@ -21,26 +21,26 @@ export class StoreComponent {
   items: StoreItem[] = [
     {
       id: 1,
-      name: "Car",
-      price: 1200,
+      name: "Banana",
+      price: 1,
       img: "./assets/banana.jpg"
     },
     {
       id: 2,
       name: "Book",
-      price: 1200,
+      price: 10,
       img: "./assets/book.jpg"
     },
     {
       id: 3,
-      name: "Computer",
-      price: 1200,
+      name: "Car",
+      price: 1800,
       img: "./assets/car.jpg"
     },
     {
       id: 4,
-      name: "Banana",
-      price: 1200,
+      name: "Computer",
+      price: 900,
       img: "./assets/computer.jpg"
     }
   ] 
