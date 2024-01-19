@@ -12,6 +12,6 @@
         <ng-template #elseBlock>
             <div class="empty-cart">Empty Cart 😥</div>
         </ng-template>
-        <div *ngIf="cartItems.length > 0" class="total">total: {{cartService.calculateTotalValue()}}</div>
+        <div *ngIf="cartItems.length > 0" class="total">total: ${{cartService.calculateTotalValue()}}</div>
     </div>
 </aside>
