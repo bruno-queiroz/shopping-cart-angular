@@ -12,20 +12,14 @@ import { CartService } from '../cart.service';
 })
 export class ItemComponent {
   @Input() item!: StoreItem
-  isItemAdded = false
-
   cartService: CartService = inject(CartService)
 
   addItemToCart(item: StoreItem){
     this.cartService.addToCart(item)
-    this.isItemAdded = true
   }
 
   removeItemFromCart(id: number, removeAll = false){
     const itemToBeRemoved = this.cartService.items.find(item => item.id === id)
-    if(itemToBeRemoved?.amount === 0 || removeAll){
-      this.isItemAdded = false
-    }
     
     this.cartService.removeFromCart(itemToBeRemoved, removeAll)
   }  
