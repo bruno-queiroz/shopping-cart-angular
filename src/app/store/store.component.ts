@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ItemComponent } from '../item/item.component';
 
-export interface StoreItem{
-  id: number,
-  name: string,
-  price: number,
-  img: string
+export interface StoreItem {
+  id: number;
+  name: string;
+  price: number;
+  img: string;
 }
 
 @Component({
@@ -14,22 +14,21 @@ export interface StoreItem{
   standalone: true,
   imports: [CommonModule, ItemComponent],
   templateUrl: './store.component.html',
-  styleUrl: './store.component.css'
+  styleUrl: './store.component.css',
 })
-
 export class StoreComponent {
-  items: StoreItem[] = []
+  items: StoreItem[] = [];
 
-  constructor(){
-    this.getItems().then(data => {
-      this.items = data
-    })
+  constructor() {
+    this.getItems().then((data) => {
+      this.items = data;
+    });
   }
 
-  async getItems(){
-    const response = await fetch("http://localhost:3000/items")
-    const data: StoreItem[] = await response.json()
+  async getItems() {
+    const response = await fetch('http://localhost:3000/items');
+    const data: StoreItem[] = await response.json();
 
-    return data
+    return data;
   }
 }

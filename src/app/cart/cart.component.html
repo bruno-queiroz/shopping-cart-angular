@@ -1,17 +1,22 @@
 <aside *ngIf="isCartOpen">
-    <div class="cart-container">
-        <button class="close-cart-btn" (click)="closeCart()">
-            <mat-icon>close</mat-icon>
-        </button>
+  <div class="cart-container">
+    <button class="close-cart-btn" (click)="closeCart()">
+      <mat-icon>close</mat-icon>
+    </button>
 
-        <h2>Cart</h2>
+    <h2>Cart</h2>
 
-        <div *ngIf="cartItems.length > 0; else elseBlock" class="cart-item-container">
-            <app-cart-item *ngFor="let cartItem of cartItems" [cartItem]="cartItem"/>
-        </div>
-        <ng-template #elseBlock>
-            <div class="empty-cart">Empty Cart 😥</div>
-        </ng-template>
-        <div *ngIf="cartItems.length > 0" class="total">total: ${{cartService.calculateTotalValue()}}</div>
+    <div
+      *ngIf="cartItems.length > 0; else elseBlock"
+      class="cart-item-container"
+    >
+      <app-cart-item *ngFor="let cartItem of cartItems" [cartItem]="cartItem" />
     </div>
+    <ng-template #elseBlock>
+      <div class="empty-cart">Empty Cart 😥</div>
+    </ng-template>
+    <div *ngIf="cartItems.length > 0" class="total">
+      total: ${{ cartService.calculateTotalValue() }}
+    </div>
+  </div>
 </aside>

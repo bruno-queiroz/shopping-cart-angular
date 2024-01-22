@@ -1,11 +1,11 @@
 <article>
-    <img [src]="cartItem.img" [alt]="cartItem.name + 'image'">
-    <div class="cart-item-info-container">
-        <span class="cart-item-name">{{cartItem.name}}</span>
-        <span class="cart-item-price">$ {{cartItem.price}}</span>
-        <span class="cart-item-amount">{{cartItem.amount}}x</span>
-    </div>
-    <button (click)="cartService.removeFromCart(cartItem, true)">
-        <mat-icon>close</mat-icon>
-    </button>
+  <img [src]="cartItem.img" [alt]="cartItem.name + 'image'" />
+  <div class="cart-item-info-container">
+    <span class="cart-item-name">{{ cartItem.name }}</span>
+    <span class="cart-item-price">$ {{ cartItem.price }}</span>
+    <span class="cart-item-amount">{{ cartItem.amount }}x</span>
+  </div>
+  <button (click)="cartService.removeFromCart(cartItem, true)">
+    <mat-icon>close</mat-icon>
+  </button>
 </article>

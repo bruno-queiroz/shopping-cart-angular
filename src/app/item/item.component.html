@@ -1,20 +1,33 @@
 <article>
-    <img [src]="item.img" [alt]="item.name + ' image'">
-    <div class="item-container">
-        <div class="item-info-container">
-            <h2>{{item.name}}</h2>
-            <span>${{item.price}}</span>
-        </div>
-        <button *ngIf="cartService.getItemById(item?.id!) === undefined; else elseBlock" class="add-to-cart-btn" (click)="addItemToCart(item)">Add to cart</button>
-        <ng-template #elseBlock>
-            <div class="cart-control-container">
-                <div class="cart-control-btn-container">
-                    <button (click)="removeItemFromCart(item.id)">-</button>
-                    <span>{{cartService.getItemById(item.id)?.amount || 0}} in cart</span>
-                    <button (click)="addItemToCart(item)">+</button>
-                </div>
-                <button class="remove-item-btn" (click)="removeItemFromCart(item.id, true)">remove</button>
-            </div>
-        </ng-template>
+  <img [src]="item.img" [alt]="item.name + ' image'" />
+  <div class="item-container">
+    <div class="item-info-container">
+      <h2>{{ item.name }}</h2>
+      <span>${{ item.price }}</span>
     </div>
+    <button
+      *ngIf="cartService.getItemById(item?.id!) === undefined; else elseBlock"
+      class="add-to-cart-btn"
+      (click)="addItemToCart(item)"
+    >
+      Add to cart
+    </button>
+    <ng-template #elseBlock>
+      <div class="cart-control-container">
+        <div class="cart-control-btn-container">
+          <button (click)="removeItemFromCart(item.id)">-</button>
+          <span
+            >{{ cartService.getItemById(item.id)?.amount || 0 }} in cart</span
+          >
+          <button (click)="addItemToCart(item)">+</button>
+        </div>
+        <button
+          class="remove-item-btn"
+          (click)="removeItemFromCart(item.id, true)"
+        >
+          remove
+        </button>
+      </div>
+    </ng-template>
+  </div>
 </article>

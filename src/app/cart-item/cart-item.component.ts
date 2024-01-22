@@ -6,13 +6,11 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-cart-item',
   standalone: true,
-  imports: [ CommonModule, MatIconModule ],
+  imports: [CommonModule, MatIconModule],
   templateUrl: './cart-item.component.html',
-  styleUrl: './cart-item.component.css'
+  styleUrl: './cart-item.component.css',
 })
 export class CartItemComponent {
   @Input() cartItem!: CartItem;
-  cartService: CartService = inject(CartService)
-
-  
+  cartService: CartService = inject(CartService);
 }

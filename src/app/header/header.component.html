@@ -1,15 +1,17 @@
 <header>
-    <div class="header-container">
-      <ul class="header-list">
-        <li><a href="/">Home</a></li>
-        <li><a href="/store">Store</a></li>
-        <li><a href="/about">About</a></li>
-      </ul>
+  <div class="header-container">
+    <ul class="header-list">
+      <li><a href="/">Home</a></li>
+      <li><a href="/store">Store</a></li>
+      <li><a href="/about">About</a></li>
+    </ul>
 
-      <button class="cart-btn" (click)="openCart()">
-          <mat-icon>add_shopping_cart</mat-icon> 
-          <div class="cart-items-amount">{{cartService.calculateCartItemsAmount()}}</div>
-      </button>
-    </div>
-    <app-cart [isCartOpen]="isCartOpen" (closeCartEvent)="closeCart()"/>
+    <button class="cart-btn" (click)="openCart()">
+      <mat-icon>add_shopping_cart</mat-icon>
+      <div class="cart-items-amount">
+        {{ cartService.calculateCartItemsAmount() }}
+      </div>
+    </button>
+  </div>
+  <app-cart [isCartOpen]="isCartOpen" (closeCartEvent)="closeCart()" />
 </header>

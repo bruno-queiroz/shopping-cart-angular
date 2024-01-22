@@ -8,19 +8,21 @@ import { CartService } from '../cart.service';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './item.component.html',
-  styleUrl: './item.component.css'
+  styleUrl: './item.component.css',
 })
 export class ItemComponent {
-  @Input() item!: StoreItem
-  cartService: CartService = inject(CartService)
+  @Input() item!: StoreItem;
+  cartService: CartService = inject(CartService);
 
-  addItemToCart(item: StoreItem){
-    this.cartService.addToCart(item)
+  addItemToCart(item: StoreItem) {
+    this.cartService.addToCart(item);
   }
 
-  removeItemFromCart(id: number, removeAll = false){
-    const itemToBeRemoved = this.cartService.items.find(item => item.id === id)
-    
-    this.cartService.removeFromCart(itemToBeRemoved, removeAll)
-  }  
+  removeItemFromCart(id: number, removeAll = false) {
+    const itemToBeRemoved = this.cartService.items.find(
+      (item) => item.id === id,
+    );
+
+    this.cartService.removeFromCart(itemToBeRemoved, removeAll);
+  }
 }

@@ -8,17 +8,17 @@ import { CartService } from '../cart.service';
   standalone: true,
   imports: [MatIconModule, CartComponent],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+  styleUrl: './header.component.css',
 })
 export class HeaderComponent {
-  isCartOpen = false
-  cartService: CartService = inject(CartService)
+  isCartOpen = false;
+  cartService: CartService = inject(CartService);
 
-  openCart(){
+  openCart() {
     this.isCartOpen = true;
   }
 
-  closeCart(){
+  closeCart() {
     this.isCartOpen = false;
   }
 }

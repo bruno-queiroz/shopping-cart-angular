@@ -7,9 +7,9 @@ import { CartItem, CartService } from '../cart.service';
 @Component({
   selector: 'app-cart',
   standalone: true,
-  imports: [ CommonModule, MatIconModule, CartItemComponent ],
+  imports: [CommonModule, MatIconModule, CartItemComponent],
   templateUrl: './cart.component.html',
-  styleUrl: './cart.component.css'
+  styleUrl: './cart.component.css',
 })
 export class CartComponent {
   cartService: CartService = inject(CartService);
@@ -18,7 +18,7 @@ export class CartComponent {
   @Input() isCartOpen!: boolean;
   @Output() closeCartEvent = new EventEmitter();
 
-  constructor(){
+  constructor() {
     this.cartItems = this.cartService.items;
   }
 

@@ -4,19 +4,19 @@ import { StoreComponent } from './store/store.component';
 import { AboutComponent } from './about/about.component';
 
 export const routes: Routes = [
-    {
-        path: "",
-        component: HomeComponent,
-        title: "Home | Shopping Cart"
-    },
-    {
-        path: "store",
-        component: StoreComponent,
-        title: "Store | Shopping Cart" 
-    },
-    {
-        path: "about",
-        component: AboutComponent,
-        title: "About | Shopping Cart"
-    }
+  {
+    path: '',
+    component: HomeComponent,
+    title: 'Home | Shopping Cart',
+  },
+  {
+    path: 'store',
+    component: StoreComponent,
+    title: 'Store | Shopping Cart',
+  },
+  {
+    path: 'about',
+    component: AboutComponent,
+    title: 'About | Shopping Cart',
+  },
 ];
