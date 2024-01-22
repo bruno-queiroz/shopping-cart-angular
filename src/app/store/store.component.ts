@@ -18,30 +18,18 @@ export interface StoreItem{
 })
 
 export class StoreComponent {
-  items: StoreItem[] = [
-    {
-      id: 1,
-      name: "Banana",
-      price: 1,
-      img: "./assets/banana.jpg"
-    },
-    {
-      id: 2,
-      name: "Book",
-      price: 10,
-      img: "./assets/book.jpg"
-    },
-    {
-      id: 3,
-      name: "Car",
-      price: 1800,
-      img: "./assets/car.jpg"
-    },
-    {
-      id: 4,
-      name: "Computer",
-      price: 900,
-      img: "./assets/computer.jpg"
-    }
-  ] 
+  items: StoreItem[] = []
+
+  constructor(){
+    this.getItems().then(data => {
+      this.items = data
+    })
+  }
+
+  async getItems(){
+    const response = await fetch("http://localhost:3000/items")
+    const data: StoreItem[] = await response.json()
+
+    return data
+  }
 }
